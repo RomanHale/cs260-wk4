@@ -89,13 +89,16 @@ int AOList::peek(int position){ //O(n) runtime
 		node *nextnode=top;
 		while(counter!=-2){
 			counter++;
+			//we reached the end of the list without finding the sought position
 			if(nextnode==nullptr){
 				counter=-2;
 			}
+			//we found the right position
 			else if(counter==position){
 				result=nextnode->value;
 				counter=-2;
 			}
+			//iteration
 			else{
 				current=nextnode;
 				nextnode=current->next;
